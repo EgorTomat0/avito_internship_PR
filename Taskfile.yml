@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  up:local:
+    desc: "Run project"
+    cmds:
+      - go run cmd/main.go
+    silent: false
+  lint:
+    desc: "Run project's lint"
+    cmds:
+      - golangci-lint run
+    silent: false
+  up:docker-compose:
+    desc: "Run project via docker-compose"
+    cmds:
+      - docker compose up
+    silent: false

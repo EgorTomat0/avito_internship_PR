@@ -1,0 +1,63 @@
+
+         /\      Grafana   /‾‾/  
+    /\  /  \     |\  __   /  /   
+   /  \/    \    | |/ /  /   ‾‾\ 
+  /          \   |   (  |  (‾)  |
+ / __________ \  |_|\_\  \_____/ 
+
+     execution: local
+        script: test.js
+        output: -
+
+     scenarios: (100.00%) 1 scenario, 300 max VUs, 5m30s max duration (incl. graceful stop):
+              * default: Up to 300 looping VUs for 5m0s over 4 stages (gracefulRampDown: 30s, gracefulStop: 30s)
+
+
+  █ THRESHOLDS 
+
+    checks
+    ✓ 'rate>0.95' rate=100.00%
+
+    http_req_duration
+    ✓ 'p(95)<301' p(95)=88.24ms
+
+    http_req_failed
+    ✓ 'rate<0.01' rate=0.00%
+
+
+  █ TOTAL RESULTS 
+
+    checks_total.......: 182456  602.09739/s
+    checks_succeeded...: 100.00% 182456 out of 182456
+    checks_failed......: 0.00%   0 out of 182456
+
+    ✓ status is 201
+    ✓ response has team data
+    ✓ team name matches
+    ✓ response time acceptable
+    ✓ has correct content type
+    ✓ team structure is correct
+    ✓ members have UUID v4 format
+    ✓ members have required fields
+
+    HTTP
+    http_req_duration..............: avg=45.52ms min=17.27ms med=39.72ms max=412.88ms p(90)=68.92ms p(95)=88.24ms
+      { expected_response:true }...: avg=45.52ms min=17.27ms med=39.72ms max=412.88ms p(90)=68.92ms p(95)=88.24ms
+    http_req_failed................: 0.00% 0 out of 22807
+    http_reqs......................: 22807 75.262174/s
+
+    EXECUTION
+    iteration_duration.............: avg=2.05s   min=1.01s   med=2.04s   max=3.33s    p(90)=3.04s   p(95)=3.06s  
+    iterations.....................: 22807 75.262174/s
+    vus............................: 2     min=2          max=300
+    vus_max........................: 300   min=300        max=300
+
+    NETWORK
+    data_received..................: 13 MB 44 kB/s
+    data_sent......................: 13 MB 43 kB/s
+
+
+
+
+running (5m03.0s), 000/300 VUs, 22807 complete and 0 interrupted iterations
+default ✓ [ 100% ] 000/300 VUs  5m0s

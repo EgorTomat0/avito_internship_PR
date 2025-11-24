@@ -41,8 +41,6 @@ func (s PRStatus) Scan(value interface{}) error {
 	default:
 		return fmt.Errorf("cannot scan %T into PRStatus", value)
 	}
-
-	// Валидация значения
 	if !s.IsValid() {
 		return fmt.Errorf("invalid PRStatus value: %s", s)
 	}
