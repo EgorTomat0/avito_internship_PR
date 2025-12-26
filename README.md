@@ -5,7 +5,7 @@
 ### Установка и запуск
 
 ```bash
-git clone https://github.com/EgorTomat0/avito_internship_PR
+git clone https://github.com/EgorTomat0/PR_dz
 
 cd avito_internship_PR
 ```
